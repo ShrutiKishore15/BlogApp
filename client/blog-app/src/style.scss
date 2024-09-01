@@ -1,4 +1,8 @@
-$lightGreen: #b9e7e7;
+$lightPurple: 
+#e2dff4;
+
+$themeBlue:
+#7d81e7;
 
 .app {
   display: flex;
@@ -18,11 +22,11 @@ $lightGreen: #b9e7e7;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: $lightGreen;
+      background-color: $lightPurple;
 
       h1 {
         font-size: 20px;
-        color: teal;
+        color: $themeBlue;
         margin-bottom: 20px;
       }
 
@@ -43,7 +47,7 @@ $lightGreen: #b9e7e7;
         button {
           padding: 10px;
           border: none;
-          background-color: teal;
+          background-color: $themeBlue;
           cursor: pointer;
           color: white;
         }
@@ -89,7 +93,7 @@ $lightGreen: #b9e7e7;
           }
 
           .write {
-            background-color: $lightGreen;
+            background-color: $lightPurple;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -100,9 +104,9 @@ $lightGreen: #b9e7e7;
             border: 1px solid white;
 
             &:hover {
-              color: teal;
+              color: $themeBlue;
               background-color: white;
-              border: 1px solid teal;
+              border: 1px solid $themeBlue;
             }
           }
         }
@@ -114,7 +118,7 @@ $lightGreen: #b9e7e7;
     footer {
       margin-top: 100px;
       padding: 20px;
-      background-color: $lightGreen;
+      background-color: $themeBlue;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -149,7 +153,7 @@ $lightGreen: #b9e7e7;
               content: "";
               width: 100%;
               height: 100%;
-              background-color: $lightGreen;
+              background-color: $lightPurple;
               position: absolute;
               top: 20px;
               left: -20px;
@@ -183,12 +187,12 @@ $lightGreen: #b9e7e7;
               border: none;
               cursor: pointer;
               background-color: white;
-              border: 1px solid teal;
-              color: teal;
+              border: 1px solid $themeBlue;
+              color: $themeBlue;
 
               &:hover {
                 border: 1px solid white;
-                background-color: $lightGreen;
+                background-color: $lightPurple;
                 color: black;
               }
             }
@@ -284,13 +288,13 @@ $lightGreen: #b9e7e7;
             padding: 7.5px 15px;
             border: none;
             cursor: pointer;
-            color: teal;
+            color: $themeBlue;
             background-color: white;
-            border: 1px solid teal;
+            border: 1px solid $themeBlue;
 
             &:hover {
               border: 1px solid white;
-              background-color: $lightGreen;
+              background-color: $lightPurple;
               color: black;
             }
           }
@@ -359,16 +363,16 @@ $lightGreen: #b9e7e7;
 
             :first-child{
               cursor: pointer;
-              color: teal;
+              color: $themeBlue;
               background-color: white;
-              border: 1px solid teal;
+              border: 1px solid $themeBlue;
               padding: 3px 5px;
             }
             :last-child{
               cursor: pointer;
               color: white;
-              background-color: teal;
-              border: 1px solid teal;
+              background-color: $themeBlue;
+              border: 1px solid $themeBlue;
               padding: 3px 5px;
             }
           }
@@ -377,7 +381,7 @@ $lightGreen: #b9e7e7;
             display: flex;
             align-items: center;
             gap: 2px;
-            color: teal;
+            color: $themeBlue;
           }
         }
       }
