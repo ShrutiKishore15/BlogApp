@@ -12,19 +12,19 @@ This is a **CRUD Blog Application** built with full-stack technologies. It featu
 
 ## ⚙️ Technologies Used
 
-- Frontend: React, SCSS
-- Backend: Node.js, Express.js
-- Database: MySQL
-- Authentication: JWT
+- Frontend: React, SCSS  
+- Backend: Node.js, Express.js  
+- Database: MySQL  
+- Authentication: JWT  
 
 ---
 
 ## 🚀 Features
 
-- Login & Register (JWT secured)
-- Create, edit, delete, and view blog posts
-- Posts tied to authenticated users
-- Category-based filtering
+- Login & Register (JWT secured)  
+- Create, edit, delete, and view blog posts  
+- Posts tied to authenticated users  
+- Category-based filtering  
 
 ---
 
@@ -32,20 +32,20 @@ This is a **CRUD Blog Application** built with full-stack technologies. It featu
 
 Before running the project, ensure you have the following installed:
 
-- **Node.js** (v16 or above)
-- **npm** (v8 or above)
-- **MySQL** installed and running locally
+- **Node.js** (v16 or above)  
+- **npm** (v8 or above)  
+- **MySQL** installed and running locally  
 
 ---
 
 ## 🛠️ Setup Instructions
 
 ### 1. 📂 Clone the Repository
+
 ```bash
 git clone https://github.com/ShrutiKishore15/BlogApp.git
 cd BlogApp
-
-# 📝 Blog App Setup Guide
+```
 
 This guide will help you set up a MySQL-backed blog application with a Node.js + React stack.
 
@@ -53,9 +53,9 @@ This guide will help you set up a MySQL-backed blog application with a Node.js +
 
 ### 2. ⚙️ Database Setup
 
-## Create the Database and Tables
+#### Create the Database and Tables
 
-1. Open the MySQL shell or a GUI like **phpMyAdmin** or **MySQL Workbench**.
+1. Open the MySQL shell or a GUI like **phpMyAdmin** or **MySQL Workbench**.  
 2. Run the following SQL commands:
 
 ```sql
@@ -81,36 +81,78 @@ CREATE TABLE posts (
   uid INT,
   FOREIGN KEY (uid) REFERENCES user(id)
 );
+```
 
+---
 
-### 3. 🖥️ Running the App
+### 3. 🔌 Configure Database Connection
 
-Start the Backend
-bash
-Copy
-Edit
+Create a `.env` file inside the `api` folder with the following content:
+
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=Shruti@15
+DB_DATABASE=blog
+```
+
+Update the `api/db.js` file to use these environment variables:
+
+```js
+import mysql from "mysql2";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
+
+export const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE
+});
+
+db.connect((err) => {
+  if (err) {
+    console.error("Connection failed: ", err);
+  } else {
+    console.log("Connected to the MySQL database successfully!");
+  }
+});
+```
+
+---
+
+### 4. 🖥️ Running the App
+
+#### Start the Backend
+
+```bash
 cd api
 npm install
 npm start
-Start the Frontend
+```
+
+#### Start the Frontend
+
 Open a new terminal window and run:
 
-bash
-Copy
-Edit
+```bash
 cd client/blog-app
 npm install
 npm start
+```
 
-📍 Access the App
-Once both servers are running, visit:
-👉 http://localhost:3000
+---
 
-📌 Notes
-Make sure your MySQL server is running before starting the backend.
+### 📍 Access the App
 
-Store sensitive values like JWT secrets in environment variables for production use.
+Once both servers are running, visit:  
+👉 **http://localhost:3000**
 
-yaml
-Copy
-Edit
+---
+
+### 📌 Notes
+
+- Make sure your MySQL server is **running** before starting the backend.  
+- Store sensitive values like JWT secrets in environment variables for **production** use.
