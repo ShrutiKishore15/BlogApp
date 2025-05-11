@@ -92,7 +92,7 @@ Create a `.env` file inside the `api` folder with the following content:
 ```env
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=Shruti@15
+DB_PASSWORD=<your password>
 DB_DATABASE=blog
 ```
 
